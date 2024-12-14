@@ -203,13 +203,28 @@ At this point, we have a barebones GNOME environment. If we want to add more too
 
 ### 6.1 basics
 
-   sudo apt install git wget curl vim -y
+    sudo apt install git wget curl vim transmission -y
 
 ### 6.2 Replace firefox by librewolf:
 
-  sudo apt purge firefox-esr -y
-  sudo apt update && sudo apt install extrepo -y
-  sudo extrepo enable librewolf
-  sudo apt update && sudo apt install librewolf -y
+    sudo apt purge firefox-esr -y
+
+Go to [Librewolf installation page](https://librewolf.net/installation/debian/) on how to install it in Debian.
+
+Add the extensions "I don't care about cookies" and "KeePassXC-browser". And in settings > Privacy & Security, delete tick on "Delete cookies and site data when LibreWolf is closed" and "Clear history when LibreWolf closes"
+
+### 6.3 more apps
+
+- [Balena Etcher](https://etcher.balena.io/#download-etcher) for burning isos
+- [Gparted](https://gparted.org/download.php) for partitions
+- [VLC](https://www.videolan.org/vlc/download-debian.html)
+- [VSCode](https://code.visualstudio.com/)
+- [Espanso](https://espanso.org/docs/install/linux)
+- [Nextcloud](https://nextcloud.com/install/#desktop-files)
+- [KeePassXC](https://keepassxc.org/download/#linux)
+- [Spotify](https://www.spotify.com/us/download/linux/)
+- [SpotX-bash](https://github.com/SpotX-Official/SpotX-Bash)
+- [calibre](https://calibre-ebook.com/download_linux)
+
 
 
