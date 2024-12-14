@@ -211,7 +211,9 @@ At this point, we have a barebones GNOME environment. If we want to add more too
 
 Go to [Librewolf installation page](https://librewolf.net/installation/debian/) on how to install it in Debian.
 
-Add the extensions "I don't care about cookies" and "KeePassXC-browser". And in settings > Privacy & Security, delete tick on "Delete cookies and site data when LibreWolf is closed" and "Clear history when LibreWolf closes"
+Add the extensions `I don't care about cookies` and `KeePassXC-browser`. 
+
+In Settings > Privacy & Security, tick on `Delete cookies and site data when LibreWolf is closed` and `Clear history when LibreWolf closes`.
 
 ### 6.3 more apps
 
