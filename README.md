@@ -143,7 +143,7 @@ Verify IP address and connectivity using the ping command,
 This will install the essential parts of GNOME without any extra bloat.
 
     sudo apt update
-    sudo apt install gnome-core -y
+    sudo apt install cinnamon-core -y
 
 ### 4.2 Remove ifupdown Package
 
@@ -222,8 +222,8 @@ In Settings > Privacy & Security, tick on `Delete cookies and site data when Lib
 - [VLC](https://www.videolan.org/vlc/download-debian.html)
 - [VSCode](https://code.visualstudio.com/)
 - [Espanso](https://espanso.org/docs/install/linux)
-- [Nextcloud](https://nextcloud.com/install/#desktop-files)
-- [KeePassXC](https://keepassxc.org/download/#linux)
+- Nextcloud - `sudo apt install nemo-nextcloud`
+- KeePassXC - `sudo apt install keepassxc`
 - [Spotify](https://www.spotify.com/us/download/linux/)
 - [SpotX-bash](https://github.com/SpotX-Official/SpotX-Bash)
 - [calibre](https://calibre-ebook.com/download_linux)
