@@ -165,7 +165,7 @@ When booting, the grub waits 5 secods for a selection. To get rid of that edit t
 
     sudo nano /etc/default/grub
 
-Place a `#` symbol at the start of line `GRUB_TIMEOUT=5` to comment it out.
+Look for the line `GRUB_TIMEOUT=5` and replace the 5 by 0.
 
 Save changes and run `sudo update-grub` to apply changes.
 
