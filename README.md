@@ -227,6 +227,6 @@ In Settings > Privacy & Security, tick on `Delete cookies and site data when Lib
 - [Spotify](https://www.spotify.com/us/download/linux/)
 - [SpotX-bash](https://github.com/SpotX-Official/SpotX-Bash)
 - [calibre](https://calibre-ebook.com/download_linux)
-
+- Wireguard - `sudo apt install wireguard openresolv` then copy conf file to `/etc/wireguard and then `sudo wg-quick up conffilename`. 
 
 
