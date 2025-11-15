@@ -43,9 +43,9 @@ Follow the remaining prompts to complete the installation. Once done, reboot you
 
 ## 3. Set network
 
-### 3.1 Set up wired DHPC
+### 3.1 Set up wired DHPC (optional)
 
-May skip this section if network works after reboot. In my case, because I fired the SSD/NVME in a different laptop at this stage, network didn't not work because of different network interfaces names.
+May skip this section if network works after reboot. In my case, because I fired the SSD/NVME in a different laptop, at this stage network didn't not work because of different network interfaces names.
 
 After rebooting, log into your system. 
 
@@ -136,24 +136,24 @@ Replace wlp1s0 with my wi-fi interface. Restart services using the systemctl com
 
 Verify IP address and connectivity using the ping command,
 
-## 4. Install GNOME
+## 4. Install GUI
 
-### 4.1 Install GNOME Core
+### 4.1 Install Cinnamon Core
 
-This will install the essential parts of GNOME without any extra bloat.
+I prefer Cinnamon, but could be GNOME. This will install the essential parts of Cinnamon without any extra bloat.
 
     sudo apt update
     sudo apt install cinnamon-core -y
 
 ### 4.2 Remove ifupdown Package
 
-The Debian installer uses the ifupdown package for network management, but GNOME uses NetworkManager. To avoid conflicts and ensure your WiFi card works, remove ifupdown:
+The Debian installer uses the ifupdown package for network management, but Cinnamon uses NetworkManager. To avoid conflicts and ensure your WiFi card works, remove ifupdown:
 
     sudo apt purge ifupdown -y
 
 ### 4.3 Lid behaviour
 
-Edit the file at `/etc/systemd/logind.conf`
+Just because I don't like the laptop to sleep when I close the lid and keep forgetting how to fix this. Edit the file at `/etc/systemd/logind.conf`
 
     HandleLidSwitch=ignore
 
@@ -199,13 +199,13 @@ After log in to the system, go to Settings -> Network. Click the gear button nex
 
 ## 6. Install Additional Tools (Optional)
 
-At this point, we have a barebones GNOME environment. If we want to add more tools like a web browser, git, CLI downloaders, and text editor etc., you can do so by running:
+At this point, we have a barebones environment. If we want to add more tools like a web browser, git, CLI downloaders, and text editor etc., you can do so by running:
 
-### 6.1 basics
+### 6.1 some basics
 
-    sudo apt install git wget curl vim transmission -y
+    sudo apt install git wget curl vim -y
 
-### 6.2 Replace firefox by librewolf:
+### 6.2 Replace firefox by librewolf
 
     sudo apt purge firefox-esr -y
 
@@ -227,6 +227,6 @@ In Settings > Privacy & Security, tick on `Delete cookies and site data when Lib
 - [Spotify](https://www.spotify.com/us/download/linux/)
 - [SpotX-bash](https://github.com/SpotX-Official/SpotX-Bash)
 - [calibre](https://calibre-ebook.com/download_linux)
-- Wireguard - `sudo apt install wireguard openresolv` then copy conf file to `/etc/wireguard and then `sudo wg-quick up conffilename`. 
+- Wireguard - `sudo apt install wireguard openresolv` then copy conf file to `/etc/wireguard` and then `sudo wg-quick up conffilename`. 
 
 
