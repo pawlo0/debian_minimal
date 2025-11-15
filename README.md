@@ -43,6 +43,72 @@ Follow the remaining prompts to complete the installation. Once done, reboot you
 
 ## 3. Set network
 
+### 3.1 Remove ifupdown and install NetworkManager to avoid conflicts
+
+The Debian installer uses the ifupdown package for network management, but Cinnamon uses NetworkManager. To avoid conflicts and ensure your WiFi card works, remove ifupdown:
+
+    sudo apt purge ifupdown -y
+
+Remove ifupdown to avoid conflicts
+
+    sudo apt purge ifupdown -y
+
+Install NetworkManager if not already present
+
+    sudo apt install network-manager -y
+
+Enable NetworkManager service
+    
+    sudo systemctl enable NetworkManager
+    sudo systemctl start NetworkManager
+
+
+### 3.2 Wired connection
+
+For wired (DHCP), NetworkManager automatically configures it.
+
+Verify the interface is up:
+
+    nmcli device status
+    nmcli device show
+    ping -c 3 8.8.8.8
+
+### 3.3 Wi-Fi connection
+
+Install firmware for Intel/realtek Wi-Fi:
+
+    sudo apt install firmware-iwlwifi firmware-realtek -y
+    sudo modprobe -r iwlwifi
+    sudo modprobe iwlwifi
+
+
+Connect using NetworkManager (CLI or GUI):
+Use nmtui for CLI text UI
+
+    sudo nmtui
+
+Or nmcli:
+
+    sudo nmcli device wifi list
+    sudo nmcli device wifi connect "SSID" password "your_password"
+
+### 3.4 Optional: Ensure NetworkManager manages all devices
+
+Check /etc/NetworkManager/NetworkManager.conf:
+
+    [main]
+    plugins=ifupdown,keyfile
+    
+    [ifupdown]
+    managed=true
+
+Then restart:
+
+    sudo systemctl restart NetworkManager
+
+
+## 3. Set network (old)
+
 ### 3.1 Set up wired DHPC (optional)
 
 May skip this section if network works after reboot. In my case, because I fired the SSD/NVME in a different laptop, at this stage network didn't not work because of different network interfaces names.
@@ -145,7 +211,7 @@ I prefer Cinnamon, but could be GNOME. This will install the essential parts of 
     sudo apt update
     sudo apt install cinnamon-core -y
 
-### 4.2 Remove ifupdown Package
+### 4.2 Remove ifupdown Package (old, to delete)
 
 The Debian installer uses the ifupdown package for network management, but Cinnamon uses NetworkManager. To avoid conflicts and ensure your WiFi card works, remove ifupdown:
 
@@ -175,7 +241,7 @@ After removing ifupdown, reboot your system:
 
     sudo shutdown -r now
 
-## 5. Configure NetworkManager
+## 5. Configure NetworkManager (to delete the section)
 
 Once you're in GNOME, you'll need to make a small change to the NetworkManager configuration file to ensure it manages your network devices correctly.
 
