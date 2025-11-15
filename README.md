@@ -269,7 +269,7 @@ At this point, we have a barebones environment. If we want to add more tools lik
 
 ### 6.1 some basics
 
-    sudo apt install git wget curl vim -y
+    sudo apt install git wget curl vim software-properties-common vlc gparted keepassxc -y
 
 ### 6.2 Replace firefox by librewolf
 
